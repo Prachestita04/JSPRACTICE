@@ -1,16 +1,11 @@
+// difference map and forEach
+const arr = [2,5,3,4,7];
+const mapResult = arr.map((ar) => {
+    return ar+2;
+})
 
-Array.prototype.myReduce = function (cb, initialValue){
-    var accumulator = initialValue;
+const forEachResult = arr.forEach((ar,i) => {
+    arr[i] =  ar + 3;
+})
 
-    for(let i=0;i<this.length;i++){
-        accumulator = accumulator ? cb(accumulator,this[i],i,this) : this[i];
-    }
-    return accumulator;
-}
-
-const nums = [1,2,3,4];
-
-const sum = nums.myReduce((acc,curr,i,arr)=>{
-   return acc + curr;
-},0);
-console.log(sum);
+console.log(mapResult,forEachResult,arr);
